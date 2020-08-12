@@ -1,18 +1,32 @@
 Resturants
+instance variables 
+     Name
+     Location
+
+constructor (name;location)
+
+getters and setters
     * Name
-    * menu ()
     * Location
 
 
 Menu 
+
     * getters
-    * setters
-    *ToString for dsiplay
     //methods KFC, BURGER KING, MCD's
+    to String relays menu
+
+
+
 
 Orders class
+ writing to csv
     * basket adds values to orders
+
+
     * Orders csv write too files
-    * check-out return
+    
+    //check-out return
+      give a total
 
 
