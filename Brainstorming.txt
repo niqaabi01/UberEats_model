@@ -1,0 +1,18 @@
+Resturants
+    * Name
+    * menu ()
+    * Location
+
+
+Menu 
+    * getters
+    * setters
+    *ToString for dsiplay
+    //methods KFC, BURGER KING, MCD's
+
+Orders class
+    * basket adds values to orders
+    * Orders csv write too files
+    * check-out return
+
+
