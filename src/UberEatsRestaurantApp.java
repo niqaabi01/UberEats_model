@@ -13,7 +13,7 @@ public class UberEatsRestaurantApp {
         System.out.println("Welcome to UberEatsApp - signature dish edition FOR RESTAURANTS\n");
 
         System.out.println("Enter restaurant name\n");
-        // takes user input
+        String Userinput = scan.nextLine();// takes user input
 
         System.out.println("Loading all orders placed...\n");
         // load list of orders

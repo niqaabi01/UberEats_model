@@ -17,7 +17,7 @@ public class Menu {
         String KFC = "";
 
         try (BufferedReader br = new BufferedReader(
-                new FileReader("C:\\Users\\saani\\Downloads\\uberEatsClone(1)\\uberEatsClone\\bin\\restos.csv"))) {
+                new FileReader("C:/Users/sibon/Desktop/UberEats_model/bin/restos.csv"))) {
             int lineNum = 0;
             int count = 0;
 
@@ -51,7 +51,7 @@ public class Menu {
         String McDonalds = "";
 
         try (BufferedReader br = new BufferedReader(
-                new FileReader("C:\\Users\\saani\\Downloads\\uberEatsClone(1)\\uberEatsClone\\bin\\restos.csv"))) {
+                new FileReader("C:/Users/sibon/Desktop/UberEats_model/bin/restos.csv"))) {
             int lineNum = 0;
             int count = 0;
 
@@ -86,7 +86,7 @@ public class Menu {
         String BurgerKing = "";
 
         try (BufferedReader br = new BufferedReader(
-                new FileReader("C:\\Users\\saani\\Downloads\\uberEatsClone(1)\\uberEatsClone\\bin\\restos.csv"))) {
+                new FileReader("C:/Users/sibon/Desktop/UberEats_model/bin/restos.csv"))) {
             int lineNum = 0;
             int count = 0;
 

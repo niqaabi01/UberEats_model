@@ -1,8 +1,11 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -11,7 +14,7 @@ import java.util.HashSet;
 
 public class OrderSystem{
     //private Menu[] menuItems; // menu items 
-    private String filePathToCSV = "C:\\Users\\saani\\Downloads\\uberEatsClone(1)\\uberEatsClone\\bin\\restos.csv";    
+    private String filePathToCSV = "C:/Users/sibon/Desktop/UberEats_model/bin/restos.csv";    
     private Order[] order;
 
 
@@ -100,18 +103,23 @@ public class OrderSystem{
     public void RecordOrders(String orders) throws IOException
     {
         try
-		{
+		(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
+                                    new FileOutputStream("C:/Users/sibon/Desktop/UberEats_model/bin/orders.csv", true), "UTF-8"))) {
+                                 writer.write(orders);
+                                 writer.newLine();
         	//creates new files
-			File file = new File("C:\\Users\\saani\\Downloads\\uberEatsClone(1)\\uberEatsClone\\bin\\orders.csv");
+			/*File file = new File("C:/Users/sibon/Desktop/UberEats_model/bin/orders.csv");
 			
 			file.createNewFile();
 			//PrintWriter output = new PrintWriter(file);
 			// creates a file write object without overiding previously stored data
-			Writer writer = new FileWriter(file, true);
+            Writer writer = new FileWriter(file, true);
+            
 
-			writer.write("\n"+orders);
+            writer.write(orders);
+            writer.newLine();
 			writer.flush();
-			writer.close();
+			writer.close();*/
 		}
 		catch(IOException e)
 		{
