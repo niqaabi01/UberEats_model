@@ -1,35 +1,37 @@
+import java.util.ArrayList;
+
 public class Restaurant{
 
     //instance variables
-    private String name;
-    private String location;
+    private String Name;
+    private String Location;
 
     //constructor
     Restaurant(String name, String location){
-
-        this.name = name;
-        this.location = location;
+        this.Name = name;
+        this.Location = location;
+       
+    
     }
 
     //Methods
-    //getters and Ssetters
+    //getters and Setters
 
-    public String getName(){
-        return this.name;
+    public String getName() {
+        return Name;
     }
 
-    public void setName(String name){
-        this.name = name;
+    public void setName(String name) {
+        Name = name;
     }
 
-    public String setLocation(){
-        retun this.location;
+    public String getLocation() {
+        return Location;
     }
 
-    public void setLocation(String location){
-        this.location = location
+    public void setLocation(String location) {
+        Location = location;
     }
-
 
     
 }

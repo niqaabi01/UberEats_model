@@ -3,46 +3,64 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
+import java.util.HashSet;
+
 
 
 public class OrderSystem{
-    private Array[] MenuItems; // menu items 
-    private String Name; // instaniate class name
-    private String filePathToCSV = "orders.csv";
-    private static Integer[] nums = { 1, 2, 3, 5, 1, 8, 6, 900 };
-    private ArrayList<String> SignatureDish1 = new ArrayList<String>();
-    private ArrayList<String> SignatureDish2 = new ArrayList<String>();
-    private ArrayList<String> SignatureDish3 = new ArrayList<String>();
-    
-
+    //private Menu[] menuItems; // menu items 
+    private String filePathToCSV = "C:\\Users\\saani\\Downloads\\uberEatsClone(1)\\uberEatsClone\\bin\\restos.csv";    
+    private Order[] order;
 
 
     OrderSystem() {}
+    public int countLinesInCSV(String filename)
+    {
+        int i = 0;
+        try 
+        {
+            BufferedReader csvReader = new BufferedReader(new FileReader(filePathToCSV));
+            String row = null;
+            while((row = csvReader.readLine()) != null)
+            {
+                i++;
+            }
+            csvReader.close();
+        }
+        catch(Exception e) 
+        {
+            System.out.println("Error: " + e.toString());
+        }
+
+        //System.out.println("Number of Profiles in the file: " +i);
+        return i;
+    }
+
+    
     // Basket stores all orders
-    public Menu[] getBasket()
+    public Order[] getBasket()
     { 
         try
         {
             BufferedReader csvReader = new BufferedReader(new FileReader(filePathToCSV));
             String row = null;
             int i=0; 
-            this.profile = new Profile[countLinesInCSV(filePathToCSV)-1];
+            this.order = new Order[countLinesInCSV(filePathToCSV)-1];
             while((row = csvReader.readLine()) != null)
             {
                 if(i > 0)
                 {
                     String[] data = row.split(",");
-                    // Intalise the menus and the items
-                    restaurant = new Restaurant(data[0].trim(),data[7].trim());
-//// check other classes to finish this
-                    menu = new Menu( data[5].trim(), data[6].trim(), data[7].trim());
-                    // order + price
-                    // need to create the orders the use the values in orders to create an Integer Array to get the total cost
-                    this.MenuItems[i-1] = Items;
-                }
+                    Restaurant restaurant = new Restaurant(data[0].trim(), data[7].trim());
+                    Menuselect franchise =new Menuselect(data[0].trim());
+                    Order order = new Order(restaurant, franchise);
+                    this.order[i-1] = order ;
+                    //System.out.println(restaurant.getName());
+                    
+                }   
                 i++;
-    
             }
             csvReader.close();
         }
@@ -51,17 +69,16 @@ public class OrderSystem{
 		{
             System.out.println("Error: " + e.toString());
         }
-        return this.Items;
-
+        return this.order;
+        
     }
         
     public static int Getcost(Integer... numbers) {
-        numbers = nums;
         int result = 0;
         for (Integer number: numbers){
             result += number;
         }
-        System.out.println("The total cost = R" + result);
+        // System.out.println("The total cost = R" + result);
         return result;
 
     }
@@ -73,26 +90,26 @@ public class OrderSystem{
     //         result += number;
     //     }
     //     System.out.println(result);
-    //     return result;
+    //     return result; 
         
 
     // }
 
 
 
-    public void Order(ArrayList orders) throws IOException
+    public void RecordOrders(String orders) throws IOException
     {
         try
 		{
         	//creates new files
-			File file = new File("Orders.csv");
+			File file = new File("C:\\Users\\saani\\Downloads\\uberEatsClone(1)\\uberEatsClone\\bin\\orders.csv");
 			
 			file.createNewFile();
 			//PrintWriter output = new PrintWriter(file);
 			// creates a file write object without overiding previously stored data
 			Writer writer = new FileWriter(file, true);
 
-			writer.write(profile+"\n");
+			writer.write("\n"+orders);
 			writer.flush();
 			writer.close();
 		}

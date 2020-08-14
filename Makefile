@@ -24,37 +24,32 @@ vpath %.class $(BINDIR)
 .java.class:
 	$(JAVAC) $(JFLAGS) $<
 
-classes: Person.class Car.class Driver.class Vehicle.class Passenger.class \
-		UberApp.class Journey.class UberRide.class Records.class
-
+classes:Menu.class Menuselect.class Order.class OrderSystem.class \
+         UberEatsMobileApp.class UberEatsRestaurantApp.class Restuarant.class
 default: $(CLASSES)
 
 doc:
 	javadoc -d $(DOCDIR) -cp $(DOCDIR) $(SRCDIR)/*.java
 
-test_classes: Person.class Car.class Driver.class Vehicle.class Passenger.class \
-			UberApp.class Journey.class UberRide.class Records.class
-	      
+test_classes: Menu.class Menuselect.class Order.class OrderSystem.class \
+		 UberEatsMobileApp.class UberEatsRestaurantApp.class Restuarant.class
 junit: test_classes
 	
-Person.class: Person.java
+Menu.class: Menu.java
 	javac -d $(BINDIR) -cp $(JUNIT)
-Car.class: Car.java
+Menuselect.class: Menuselect.java
 	javac -d $(BINDIR) -cp $(JUNIT)
-Driver.class: Driver.java
+Order.class: Order.java
 	javac -d $(BINDIR) -cp $(JUNIT)
-Vehicle.class: Vehicle.java
+OrderSystem.class: OrderSystem.java
 	javac -d $(BINDIR) -cp $(JUNIT)
-Passenger.class: Passenger.java
+UberEatsMobileApp.class: UberEatsMobileApp.java
 	javac -d $(BINDIR) -cp $(JUNIT)
-UberApp.class: UberApp.java
+UberEatsRestaurantApp.class: UberEatsRestaurantApp.java
 	javac -d $(BINDIR) -cp $(JUNIT)
-Journey.class: Journey.java
+Restuarant.class: Restuarant.java
 	javac -d $(BINDIR) -cp $(JUNIT)
-UberRide.class: UberRide.java
-	javac -d $(BINDIR) -cp $(JUNIT)
-Records.class: Records.java
-	javac -d $(BINDIR) -cp $(JUNIT)
+
 
 
 #test_classes: SearchItLinearTest.java eDirectoryTest.java #SearchItTest.java PrintItTest.java
