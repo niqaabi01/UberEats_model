@@ -103,23 +103,14 @@ public class OrderSystem{
     public void RecordOrders(String orders) throws IOException
     {
         try
-		(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
+        (        	//creates new files
+        			// creates a file write object without overiding previously stored data
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
                                     new FileOutputStream("C:/Users/sibon/Desktop/UberEats_model/bin/orders.csv", true), "UTF-8"))) {
                                  writer.write(orders);
                                  writer.newLine();
-        	//creates new files
-			/*File file = new File("C:/Users/sibon/Desktop/UberEats_model/bin/orders.csv");
 			
-			file.createNewFile();
-			//PrintWriter output = new PrintWriter(file);
-			// creates a file write object without overiding previously stored data
-            Writer writer = new FileWriter(file, true);
             
-
-            writer.write(orders);
-            writer.newLine();
-			writer.flush();
-			writer.close();*/
 		}
 		catch(IOException e)
 		{
