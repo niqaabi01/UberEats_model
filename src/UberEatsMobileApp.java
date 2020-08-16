@@ -184,9 +184,8 @@ public class UberEatsMobileApp {
             orderSystem.RecordOrders(list);
             //load items from cart
             for(int i =0 ; i<mList.size();i++){
-                int j =1;
-                System.out.println(j+". "+mList.get(i));
-                j++;
+                System.out.println(1+i + ". "+mList.get(i));
+            
             }
         /**
          * 1. signaturedish1
